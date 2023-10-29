@@ -8,9 +8,11 @@ import { AuthModule } from './utils/auth/auth.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      'mongodb+srv://Amebita:T20062002@amebita.hnao9oy.mongodb.net/',
-    ),
+    MongooseModule.forRootAsync({
+      useFactory: () => ({
+        uri: process.env.MONGODB_CONNECT_URI as string,
+      }),
+    }),
     DrinksModule,
     UsersModule,
     AuthModule,
