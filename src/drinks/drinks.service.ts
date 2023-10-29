@@ -21,10 +21,9 @@ export class DrinksService {
   }
 
   async searchByNameInDatabase(name: string) {
-    // Realiza la búsqueda en la base de datos utilizando el modelo de Drink.
     const drinks = await this.drinkModel
       .find({
-        name: { $regex: new RegExp(name, 'i') }, // Búsqueda de texto insensible a mayúsculas/minúsculas
+        name: { $regex: new RegExp(name, 'i') },
       })
       .exec();
 
