@@ -4,10 +4,6 @@
   "description": "",
   "author": "",
   "private": true,
-  "engines": {
-    "node": ">=16.14",
-    "npm": "8.x"
-  },
   "license": "UNLICENSED",
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
