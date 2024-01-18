@@ -11,6 +11,7 @@ import { AuthModule } from './utils/auth/auth.module';
     MongooseModule.forRootAsync({
       useFactory: () => ({
         uri: process.env.MONGODB_CONNECT_URI as string,
+        dbName: 'test',
       }),
     }),
     DrinksModule,
